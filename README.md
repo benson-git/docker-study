@@ -6,6 +6,23 @@ Docker study
 --------
 
 ```
-yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
+yum install git-core
 
 ```
+
+Clone docker-study project
+--------
+
+```
+git clone https://github.com/benson-git/docker-study.git
+
+```
+
+Build docker images
+--------
+
+```
+docker build -t dockerstudy/centos:7.4 .
+```
+
+如果Dockerfile在当前目录下，输入点.就可以进行加载当前目录下的Dockerfile
