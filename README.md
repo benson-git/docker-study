@@ -53,5 +53,39 @@ docker build -t dockerstudy/mysql:5.5 .
 docker run -d -p 3306:3306 -v /usr/local/bwang/docker/vfs/dir/mydata:/var/lib/mysql dockerstudy/mysql:5.5
 ```
 
+ 在docker run中加入 --privileged=true给容器加上特定权限，解决chown: changing ownership of '/var/lib/mysql/....': Permission denied问题.
+
+查看容器日志:
+```
+docker logs container-id
+```
+
+Docker 常用命令:
+--------
+
+```
+docker images
+```
+
+```
+docker ps -a
+```
+
+```
+docker stop container-id
+```
+
+```
+docker start container-id
+```
+
+```
+docker rmi container-id
+```
+
+```
+docker rm image-id
+```
+
 
 
