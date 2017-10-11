@@ -43,7 +43,14 @@ Build docker images for mariaDB
 --------
 
 ```
-docker build -t dockstudy/mysql:5.5 .
+docker build -t dockerstudy/mysql:5.5 .
+```
+
+ÔËĞĞ¹ÒÔØdocker volumeµÄmysqlÈİÆ÷
+--------
+
+```
+docker run -d -p 3306:3306 -v /usr/local/bwang/docker/vfs/dir/mydata:/var/lib/mysql dockerstudy/mysql:5.5
 ```
 
 
