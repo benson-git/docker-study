@@ -22,4 +22,4 @@ EXPOSE 3306
 
 VOLUME ["/var/lib/mysql"]
 
-ENTRYPOINT ["/scripts/start"]
+ENTRYPOINT ["/scripts/start.sh"]
