@@ -6,7 +6,7 @@ set -e
 # When Startup Container script
 #
 
-if [[ -e /scripts/firstrun ]]; then
+if [[ -e /scripts/firstrun.sh ]]; then
 	# config mariadb
 	/scripts/firstrun_maria.sh
     	rm /scripts/firstrun.sh
