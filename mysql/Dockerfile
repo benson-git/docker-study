@@ -16,7 +16,7 @@ RUN yum install -y mariadb mariadb-server && \
 ADD mysqld_charset.cnf /etc/my.cnf.d/
 
 COPY scripts /scripts
-RUN chmod +x /scripts/start
+RUN chmod +x /scripts/start.sh
 
 EXPOSE 3306
 
