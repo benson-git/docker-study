@@ -19,6 +19,7 @@ RUN yum install -y curl wget tar bzip2 unzip vim-enhanced passwd sudo yum-utils 
     yum clean all
 
 RUN pip install supervisor
+#RUN pip install --upgrade pip
 ADD supervisord.conf /etc/supervisord.conf
 
 RUN mkdir -p /etc/supervisor.conf.d && \
