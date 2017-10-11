@@ -32,3 +32,19 @@ docker build -t dockerstudy/centos:7.4 .
 ```
 docker images
 ```
+
+显示更底层的容器或image信息:
+
+```
+docker inspect study
+```
+
+Build docker images for mariaDB
+--------
+
+```
+docker build -t dockstudy/mysql:5.5 .
+```
+
+
+
