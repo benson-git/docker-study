@@ -67,24 +67,39 @@ Docker 常用命令:
 docker images
 ```
 
+查看已经创建的容器：
 ```
 docker ps -a
 ```
-
+查看已经启动的容器：
 ```
-docker stop container-id
-```
-
-```
-docker start container-id
+docker ps -s
 ```
 
 ```
-docker rmi container-id
+docker stop container_id/container_name
 ```
 
 ```
-docker rm image-id
+docker start container_id/container_name
+```
+
+```
+docker rmi container_id/container_name
+```
+
+```
+docker rm image_id
+```
+
+重命名一个容器:
+```
+docker rename old_name new_name 
+```
+
+在运行的容器中执行命令:
+```
+docker exec -it container_id/container_name /bin/bash  
 ```
 
 
