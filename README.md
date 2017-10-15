@@ -60,6 +60,12 @@ docker run -d -p 3306:3306 -v /usr/local/bwang/docker/vfs/dir/mydata:/var/lib/my
 docker logs container-id
 ```
 
+只是创建容器，但不运行:
+
+```
+docker create [OPTIONS] IMAGE [COMMAND] '[ARG...]'
+```
+
 Docker 常用命令:
 --------
 
