@@ -8,20 +8,19 @@ FROM dockerstudy/centos:7.4
 MAINTAINER Benson Wang <chikaiwang@hotmail.com>
 
 ENV DATA_DIR /var/lib/mysql
-
-# Install Mariadb
-RUN yum install -y mariadb mariadb-server && \
+ENV TERM xterm
+ 
+RUN yum -y install mariadb mariadb-server && \
     yum clean all
 
-ADD mysqld_charset.cnf /etc/my.cnf.d/
-
+COPY mysqld_charset.cnf /etc/my.cnf.d/
+COPY my.cnf /etc/my.cnf
 COPY scripts /scripts
+
 RUN chmod +x /scripts/start.sh && \
     chmod +x /scripts/firstrun_maria.sh && \
     chmod +x /scripts/firstrun.sh
 
-EXPOSE 3306
+# EXPOSE 3306
 
-VOLUME ["/var/lib/mysql"]
-
-ENTRYPOINT ["/scripts/start.sh"]
+CMD ["/scripts/start.sh"]

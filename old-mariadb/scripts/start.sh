@@ -12,9 +12,10 @@ if [[ -e /scripts/firstrun.sh ]]; then
     	rm /scripts/firstrun.sh
 else
 	# Cleanup previous mariadb sockets
-	if [[ -e $DATA_DIR/mysql.sock ]]; then
-		rm -f $DATA_DIR/mysql.sock
+	if [[ -e ${DATA_DIR}/mysql.sock ]]; then
+		rm -f ${DATA_DIR}/mysql.sock
 	fi
 fi
 
 exec /usr/bin/mysqld_safe
+

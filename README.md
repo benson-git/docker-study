@@ -91,11 +91,11 @@ docker start container_id/container_name
 ```
 
 ```
-docker rmi container_id/container_name
+docker rm container_id/container_name
 ```
 
 ```
-docker rm image_id
+docker rmi image_id
 ```
 
 重命名一个容器:
