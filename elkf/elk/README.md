@@ -14,6 +14,8 @@ Usage
 
 Run a container from the image with the following command:
 ```
-docker run -d -p 5601:5601 -p 9200:9200 -p 5044:5044 -p 5000:5000 --name elk sebp/elk
+docker run -d -p 5601:5601 -p 9200:9200 -p 5044:5044 -p 5000:5000 --name=elk_server sebp/elk
 
 ```
+
+
