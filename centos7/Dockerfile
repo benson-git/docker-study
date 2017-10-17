@@ -21,6 +21,7 @@ RUN yum -y install curl wget tar bzip2 unzip vim-enhanced passwd sudo yum-utils 
     yum clean all
 
 RUN pip install supervisor && \
+    pip install --upgrade pip && \
     mkdir -p /etc/supervisor/confd && \
     mkdir -p /var/log/supervisor
 
