@@ -1,5 +1,5 @@
 output.logstash:
-  enabled: true
+  enabled: true #´ò¿ªÊä³ö
   hosts: ["elk:5044"]
   ssl:
       certificate_authorities:
@@ -7,6 +7,9 @@ output.logstash:
   timeout: 15
 
 filebeat.prospectors:
-- input_type: log
-  paths:
-    - /var/log/*.log
+  - 
+    paths:
+      - /var/log/syslog
+      - /var/log/auth.log
+    input_type: log
+    document_type: syslog    
