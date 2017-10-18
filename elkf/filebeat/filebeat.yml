@@ -1,5 +1,5 @@
 output.logstash:
-  enabled: true #´ò¿ªÊä³ö
+  enabled: true
   hosts: ["elk:5044"]
   ssl:
       certificate_authorities:
