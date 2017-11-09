@@ -18,4 +18,9 @@ docker run -d -p 5601:5601 -p 9200:9200 -p 5044:5044 -p 5000:5000 --name=elk_ser
 
 ```
 
+kibana URL
+--------
+http://hostname:5601
+
+Kibana上创建filebeat-* index pattern
 
