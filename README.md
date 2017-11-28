@@ -50,7 +50,7 @@ docker build -t dockerstudy/mysql:5.5 .
 --------
 
 ```
-docker run -d -p 3306:3306 --privileged=true --name mydb -e DB_USER=admin -e DB_USER=admin -e REMOTE_ADMIN=true -e REMOTE_ADMIN_USER=bwang -e REMOTE_ADMIN_PASS=bwang -v /usr/local/bwang/docker/vfs/dir/mydata:/var/lib/mysql dockerstudy/mysql:5.5
+docker run -d -p 3306:3306 --privileged=true --name mydb -e DB_USER=admin -e DB_PASS=admin -e REMOTE_ADMIN=true -e REMOTE_ADMIN_USER=bwang -e REMOTE_ADMIN_PASS=bwang -v /usr/local/bwang/docker/vfs/dir/mydata:/var/lib/mysql dockerstudy/mysql:5.5
 ```
 
  在docker run中加入 --privileged=true给容器加上特定权限，解决chown: changing ownership of '/var/lib/mysql/....': Permission denied问题.

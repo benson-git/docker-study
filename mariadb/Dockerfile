@@ -9,7 +9,8 @@ MAINTAINER Benson Wang <chikaiwang@hotmail.com>
 
 ENV DATA_DIR /var/lib/mysql
 ENV TERM xterm
- 
+
+#RUN yum install -y mysql-server mysql 
 RUN yum -y install mariadb mariadb-server && \
     yum clean all
 
