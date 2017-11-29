@@ -10,8 +10,10 @@ MAINTAINER Benson Wang <chikaiwang@hotmail.com>
 ENV DATA_DIR /var/lib/mysql
 ENV TERM xterm
 
-#RUN yum install -y mysql-server mysql 
-RUN yum -y install mariadb mariadb-server && \
+RUN wget http://repo.mysql.com/mysql57-community-release-fc26-10.noarch.rpm
+RUN rpm -ivh mysql57-community-release-fc26-10.noarch.rpm
+
+RUN yum install -y mysql-server mysql && \
     yum clean all
 
 COPY mysqld_charset.cnf /etc/my.cnf.d/

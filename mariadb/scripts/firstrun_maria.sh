@@ -88,6 +88,7 @@ firstrun_maria() {
                     printf "."
 			sleep 5
 			mysql -uroot -e "status" > /dev/null 2>&1
+			printf ".come here" $?
 			STA=$?
 		done
 		echo "OK"
