@@ -23,21 +23,22 @@ firstrun_maria() {
         
         mkdir -p /etc/mysql/conf.d
 	   	
-        mysql_install_db --user=mysql --ldata=${DATA_DIR} > /dev/null
+        mysqld --initialize-insecure --user=mysql --datadir=${DATA_DIR}  > /dev/null
         echo "===> System databases initialized..."
 
 	# Start mariadb
-        /usr/bin/mysqld_safe --user mysql > /dev/null 2>&1 &
+        /usr/bin/mysqld_safe --user=mysql > /dev/null 2>&1 &
 
         echo "===> Waiting for MariaDB to start..."
 
 		STA=1
-		while [[ STA -ne 0 ]]; do
-                    printf "."
-			sleep 5
-			mysql -uroot -e "status" > /dev/null 2>&1
+		#while [[ STA -ne 0 ]]; do
+                    #printf "."
+			#sleep 20
+			mysql -uroot -e "select 1" > /dev/null
 			STA=$?
-		done
+                         printf STA
+		#done
         echo "===> Start OK..."
 
 		# 1. Create a localhost-only admin account

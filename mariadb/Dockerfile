@@ -10,11 +10,14 @@ MAINTAINER Benson Wang <chikaiwang@hotmail.com>
 ENV DATA_DIR /var/lib/mysql
 ENV TERM xterm
 
-RUN wget http://repo.mysql.com/mysql57-community-release-fc26-10.noarch.rpm
-RUN rpm -ivh mysql57-community-release-fc26-10.noarch.rpm
+RUN wget http://repo.mysql.com/mysql57-community-release-el7-8.noarch.rpm
+#RUN yum localinstall -y mysql57-community-release-el7-8.noarch.rpm
+RUN rpm -ivh mysql57-community-release-el7-8.noarch.rpm
+RUN yum install -y mysql-community-server && \
+     yum clean all
 
-RUN yum install -y mysql-server mysql && \
-    yum clean all
+#RUN yum install -y mysql-community-server && \
+#    yum clean all
 
 COPY mysqld_charset.cnf /etc/my.cnf.d/
 COPY my.cnf /etc/my.cnf

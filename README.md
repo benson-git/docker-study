@@ -94,6 +94,11 @@ docker start container_id/container_name
 docker rm container_id/container_name
 ```
 
+批量删除停止容器使用
+```
+docker rm $(sudo docker ps -a -q)
+```
+
 ```
 docker rmi image_id
 ```
@@ -107,6 +112,23 @@ docker rename old_name new_name
 ```
 docker exec -it container_id/container_name /bin/bash  
 ```
+
+
+
+
+Miscellaneous
+--------
+
+ >/dev/null 
+ - redirects the command standard output to the null device, which is a special device which discards the information written to it
+
+ 2 >&1 
+ - redirects the standard error stream to the standard output stream (stderr = 2, stdout = 1).
+ 
+ STDIN is represented by 0, STDOUT by 1, and STDERR by 2.
+
+/dev/null is the bit-bucket: the place where you dump anything you don't need.
+So, the STDOUT is redirected to the bit-bucket(trash) and the STDERR is redirected to where the STDOUT is located: the bit-bucket.
 
 
 
