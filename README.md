@@ -18,22 +18,22 @@ git clone https://github.com/benson-git/docker-study.git
 
 ```
 
-Build docker images (»ù´¡¾µÏñ)
+Build docker images (åŸºç¡€é•œåƒ)
 --------
 
 ```
 docker build -t dockerstudy/centos:7.4 .
 ```
 
-Èç¹ûDockerfileÔÚµ±Ç°Ä¿Â¼ÏÂ£¬ÊäÈëµã.¾Í¿ÉÒÔ½øĞĞ¼ÓÔØµ±Ç°Ä¿Â¼ÏÂµÄDockerfile.
+å¦‚æœDockerfileåœ¨å½“å‰ç›®å½•ä¸‹ï¼Œè¾“å…¥ç‚¹.å°±å¯ä»¥è¿›è¡ŒåŠ è½½å½“å‰ç›®å½•ä¸‹çš„Dockerfile.
 
-²é¿´¾µÏñ:
+æŸ¥çœ‹é•œåƒ:
 
 ```
 docker images
 ```
 
-ÏÔÊ¾¸üµ×²ãµÄÈİÆ÷»òimageĞÅÏ¢:
+æ˜¾ç¤ºæ›´åº•å±‚çš„å®¹å™¨æˆ–imageä¿¡æ¯:
 
 ```
 docker inspect study
@@ -46,38 +46,38 @@ Build docker images for mariaDB
 docker build -t dockerstudy/mysql:5.5 .
 ```
 
-ÔËĞĞ¹ÒÔØdocker volumeµÄmysqlÈİÆ÷
+è¿è¡ŒæŒ‚è½½docker volumeçš„mysqlå®¹å™¨
 --------
 
 ```
 docker run -d -p 3306:3306 --privileged=true --name mydb -e DB_USER=admin -e DB_PASS=admin -e REMOTE_ADMIN=true -e REMOTE_ADMIN_USER=bwang -e REMOTE_ADMIN_PASS=bwang -v /usr/local/bwang/docker/vfs/dir/mydata:/var/lib/mysql dockerstudy/mysql:5.5
 ```
 
- ÔÚdocker runÖĞ¼ÓÈë --privileged=true¸øÈİÆ÷¼ÓÉÏÌØ¶¨È¨ÏŞ£¬½â¾öchown: changing ownership of '/var/lib/mysql/....': Permission deniedÎÊÌâ.
+ åœ¨docker runä¸­åŠ å…¥ --privileged=trueç»™å®¹å™¨åŠ ä¸Šç‰¹å®šæƒé™ï¼Œè§£å†³chown: changing ownership of '/var/lib/mysql/....': Permission deniedé—®é¢˜.
 
-²é¿´ÈİÆ÷ÈÕÖ¾:
+æŸ¥çœ‹å®¹å™¨æ—¥å¿—:
 ```
 docker logs container-id
 ```
 
-Ö»ÊÇ´´½¨ÈİÆ÷£¬µ«²»ÔËĞĞ:
+åªæ˜¯åˆ›å»ºå®¹å™¨ï¼Œä½†ä¸è¿è¡Œ:
 
 ```
 docker create [OPTIONS] IMAGE [COMMAND] '[ARG...]'
 ```
 
-Docker ³£ÓÃÃüÁî:
+Docker å¸¸ç”¨å‘½ä»¤:
 --------
 
 ```
 docker images
 ```
 
-²é¿´ÒÑ¾­´´½¨µÄÈİÆ÷£º
+æŸ¥çœ‹å·²ç»åˆ›å»ºçš„å®¹å™¨ï¼š
 ```
 docker ps -a
 ```
-²é¿´ÒÑ¾­Æô¶¯µÄÈİÆ÷£º
+æŸ¥çœ‹å·²ç»å¯åŠ¨çš„å®¹å™¨ï¼š
 ```
 docker ps -s
 ```
@@ -94,7 +94,7 @@ docker start container_id/container_name
 docker rm container_id/container_name
 ```
 
-ÅúÁ¿É¾³ıÍ£Ö¹ÈİÆ÷Ê¹ÓÃ
+æ‰¹é‡åˆ é™¤åœæ­¢å®¹å™¨ä½¿ç”¨
 ```
 docker rm $(sudo docker ps -a -q)
 ```
@@ -103,18 +103,41 @@ docker rm $(sudo docker ps -a -q)
 docker rmi image_id
 ```
 
-ÖØÃüÃûÒ»¸öÈİÆ÷:
+é‡å‘½åä¸€ä¸ªå®¹å™¨:
 ```
 docker rename old_name new_name 
 ```
 
-ÔÚÔËĞĞµÄÈİÆ÷ÖĞÖ´ĞĞÃüÁî:
+åœ¨è¿è¡Œçš„å®¹å™¨ä¸­æ‰§è¡Œå‘½ä»¤:
 ```
 docker exec -it container_id/container_name /bin/bash  
 ```
 
 
+å¯åŠ¨é•œåƒï¼Œå†™å…¥ä¸€äº›æ–‡ä»¶æˆ–è€…æ›´æ–°è½¯ä»¶ï¼ˆè¿›å…¥å®¹å™¨äº¤äº’æ¨¡å¼ï¼Œ44652ba46352å°±æ˜¯å®¹å™¨idï¼‰:
+```
+docker run -it 3afd47092a0e
+[root@44652ba46352 /]# ls
+```
 
+æ›´æ–°é•œåƒ:
+```
+docker commit -m="test update" -a="wangsir" 44652ba46352 wangsir/centos-test:7.4.1708
+```
+å‚æ•°è§£é‡Šï¼š
+
+-m:æäº¤çš„æè¿°ä¿¡æ¯
+
+-a:æŒ‡å®šé•œåƒä½œè€…
+
+44652ba46352ï¼šå®¹å™¨ID
+
+wangsir/centos-test:7.4.1708:æŒ‡å®šè¦åˆ›å»ºçš„ç›®æ ‡é•œåƒå
+
+ä¿®æ”¹é•œåƒæ ‡ç­¾tagï¼š
+```
+docker tag 7853e6064af8 wangsir/centos-test:7.4.1708
+```
 
 Miscellaneous
 --------
