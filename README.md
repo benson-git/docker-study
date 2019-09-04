@@ -116,9 +116,10 @@ docker exec -it container_id/container_name /bin/bash
 
 启动镜像，写入一些文件或者更新软件（进入容器交互模式，44652ba46352就是容器id）:
 ```
-docker run -it 3afd47092a0e
+docker run -it --name rpc-server 3afd47092a0e
 [root@44652ba46352 /]# ls
 ```
+--name 参数在容器启动时给容器命名一个自己容易识别的名称
 
 更新镜像:
 ```
