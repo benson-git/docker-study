@@ -123,6 +123,16 @@ exit
 Ctrl+d 
 ```
 
+终止容器
+```
+docker stop 44652ba46352
+```
+
+终止状态的容器，可以使用docker start来重新启动
+```
+docker start 44652ba46352
+```
+
 启动镜像，写入一些文件或者更新软件（进入容器交互模式，44652ba46352就是容器id）:
 ```
 docker run -it --name rpc-server 3afd47092a0e
