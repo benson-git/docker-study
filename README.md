@@ -113,11 +113,6 @@ docker rename old_name new_name
 docker exec -it container_id/container_name /bin/bash  
 ```
 
-登录一个容器（在运行的容器中执行命令）:
-```
-docker exec -it container_id/container_name /bin/bash  
-```
-
 退出容器，关闭容器
 ```
 exit 
@@ -152,6 +147,23 @@ wangsir/centos-test:7.4.1708:指定要创建的目标镜像名
 修改镜像标签tag：
 ```
 docker tag 7853e6064af8 wangsir/centos-test:7.4.1708
+```
+
+备份镜像
+```
+docker save -o mysql.tar mysql
+```
+-mysql.tar 保存的文件
+-mysql 镜像名称
+
+导出容器
+```
+docker export 7e8a0dc1cb88 > mysql.tar
+```
+
+恢复镜像
+```
+cat mysql.tar | docker import - mysql:latest
 ```
 
 Miscellaneous
