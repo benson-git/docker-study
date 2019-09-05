@@ -108,11 +108,25 @@ docker rmi image_id
 docker rename old_name new_name 
 ```
 
-在运行的容器中执行命令:
+登录一个容器（在运行的容器中执行命令）:
 ```
 docker exec -it container_id/container_name /bin/bash  
 ```
 
+登录一个容器（在运行的容器中执行命令）:
+```
+docker exec -it container_id/container_name /bin/bash  
+```
+
+退出容器，关闭容器
+```
+exit 
+```
+
+退出容器，不关闭
+```
+Ctrl+d 
+```
 
 启动镜像，写入一些文件或者更新软件（进入容器交互模式，44652ba46352就是容器id）:
 ```
@@ -121,7 +135,7 @@ docker run -it --name rpc-server 3afd47092a0e
 ```
 --name 参数在容器启动时给容器命名一个自己容易识别的名称
 
-更新镜像:
+保存一个容器镜像（更新镜像）:
 ```
 docker commit -m="test update" -a="wangsir" 44652ba46352 wangsir/centos-test:7.4.1708
 ```
