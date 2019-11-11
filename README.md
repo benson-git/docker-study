@@ -176,6 +176,13 @@ docker export 7e8a0dc1cb88 > mysql.tar
 cat mysql.tar | docker import - mysql:latest
 ```
 
+加载镜像
+```
+docker load -i mysql.tar 
+```
+
+
+
 Miscellaneous
 --------
 
