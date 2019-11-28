@@ -181,7 +181,12 @@ cat mysql.tar | docker import - mysql:latest
 docker load -i mysql.tar 
 ```
 
+搜索指定信息
 
+```
+docker ps -a | grep opencv
+docker images | grep ubantu
+```
 
 Miscellaneous
 --------
